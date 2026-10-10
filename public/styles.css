@@ -1,5 +1,5 @@
 /* =====================================================
-   Carlos Westfal — Portfólio v2
+   Carlos Westfal — Portfólio v3
    Ordem: temas -> base -> header -> hero -> seções -> cards -> mobile
    ===================================================== */
 
@@ -230,6 +230,36 @@ h2 { font-size: clamp(2.15rem, 3.55vw, 3.45rem); margin: 0 0 25px; }
 .project-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .project-quiet { color: var(--faint); font-size: .84rem; font-weight: 650; }
 
+/* CONTATO: ações e e-mail acessível nos dois temas */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+.contact-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 28px;
+  font-size: .93rem;
+}
+.contact-email span { color: var(--muted); font-size: .8rem; }
+.contact-email a {
+  color: var(--accent-light);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+.contact-email a:hover { text-decoration: underline; }
+@media (max-width: 420px) {
+  .contact-actions { flex-direction: column; align-items: stretch; }
+  .contact-actions .button { width: 100%; }
+}
+
 /* CONTATO */
 .contact-section { padding-top: 25px; }
 .contact-card { position: relative; overflow: hidden; text-align: center; padding: clamp(55px, 8vw, 100px) 24px; background: linear-gradient(135deg, var(--surface), var(--surface-soft)); border: 1px solid var(--border); border-radius: 24px; isolation: isolate; }
@@ -319,4 +349,43 @@ h2 { font-size: clamp(2.15rem, 3.55vw, 3.45rem); margin: 0 0 25px; }
 /* Não permitir que a grade decorativa ultrapasse a janela no celular. */
 @media (max-width: 620px) {
   .hero-visual::before { inset: 0; }
+}
+
+/* SELETOR DE IDIOMA: AO LADO DO BOTÃO CLARO/ESCURO */
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex: none;
+  height: 43px;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+}
+.language-option {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 7px;
+  padding: 7px 8px;
+  min-width: 31px;
+  font-size: .74rem;
+  font-weight: 750;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.language-option:hover { color: var(--text); }
+.language-option[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+.language-separator { color: var(--faint); font-size: .7rem; user-select: none; }
+@media (max-width: 620px) {
+  .header-inner { gap: 10px; }
+  .header-actions { gap: 7px; margin-left: auto; }
+  .language-switch { padding: 3px 4px; }
+  .language-option { min-width: 27px; padding: 7px 5px; }
+  .icon-button { width: 40px; height: 40px; }
 }
