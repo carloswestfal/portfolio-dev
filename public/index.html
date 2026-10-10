@@ -1,235 +1,198 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-
-    <meta name="description"
-          content="Portfólio de Carlos Westfal. Desenvolvimento back-end, projetos web e soluções digitais.">
-
-    <title>Carlos Westfal | Desenvolvedor</title>
-
-    <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#080e1a">
+  <meta name="description" content="Carlos Westfal — desenvolvedor com atuação em suporte técnico e back-end. Projetos, tecnologias e soluções digitais.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Carlos Westfal | Desenvolvedor Back-end & Web">
+  <meta property="og:description" content="Desenvolvimento back-end, experiências web e projetos construídos com propósito.">
+  <meta property="og:url" content="https://carloswestfal.dev/">
+  <link rel="canonical" href="https://carloswestfal.dev/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Carlos Westfal — Desenvolvedor Back-end & Web</title>
+  <script>
+    // Aplica a preferência salva antes do CSS aparecer, evitando piscar entre os temas.
+    try {
+      const saved = localStorage.getItem('cw-theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (_) {}
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
 </head>
-
 <body>
-    <a class="skip-link" href="#conteudo">
-        Pular para o conteúdo
-    </a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="site-glow" aria-hidden="true"></div>
 
-    <!-- CABEÇALHO -->
-    <header class="header">
-        <div class="container header-content">
-            <a href="#inicio" class="logo">
-                CW<span>.</span>
-            </a>
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Carlos Westfal, início">cw<span>.</span></a>
 
-            <nav aria-label="Navegação principal">
-                <a href="#sobre">Sobre</a>
-                <a href="#tecnologias">Tecnologias</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#contato">Contato</a>
-            </nav>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-            <button id="theme-toggle"
-                    class="theme-toggle"
-                    type="button"
-                    aria-label="Ativar tema claro">
-                <span id="theme-icon" aria-hidden="true">☀</span>
-            </button>
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Ativar tema claro" title="Alternar tema">
+          <span id="theme-icon" aria-hidden="true">☀</span>
+        </button>
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu">
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 01 / HERO -->
+    <section id="inicio" class="hero section-grid container" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> BACK-END, WEB & SOLUÇÕES DIGITAIS</p>
+        <h1 id="hero-title">Transformando ideias em <span class="text-accent">soluções digitais.</span></h1>
+        <p class="lead">Olá, sou <strong>Carlos Westfal</strong>. Atuo com suporte técnico e desenvolvimento back-end, conectando lógica, organização e criatividade para resolver problemas reais.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="https://github.com/carloswestfal" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span></a>
         </div>
-    </header>
+        <div class="hero-footnote"><span class="line" aria-hidden="true"></span> Projetos reais. Aprendizado contínuo.</div>
+      </div>
 
-    <main id="conteudo">
+      <div class="hero-visual reveal">
+        <div class="terminal-card" aria-label="Terminal ilustrativo com apresentação e tecnologias">
+          <div class="terminal-bar">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>carlos@portfolio: ~</span>
+            <span class="terminal-pill">bash</span>
+          </div>
+          <div class="terminal-content">
+            <div class="terminal-line"><span class="terminal-dollar">➜</span> <span class="terminal-cmd">whoami</span></div>
+            <div class="terminal-value">Carlos Westfal <span class="terminal-muted">// Developer</span></div>
 
-        <!-- APRESENTAÇÃO -->
-        <section id="inicio" class="hero container">
+            <div class="terminal-line"><span class="terminal-dollar">➜</span> <span class="terminal-cmd">cat stack.txt</span></div>
+            <div class="terminal-value"><span class="terminal-blue">PHP</span> · PostgreSQL · Git · Linux</div>
 
-            <div class="hero-content">
-                <p class="eyebrow">
-                    DESENVOLVIMENTO BACK-END & WEB
-                </p>
+            <div class="terminal-line"><span class="terminal-dollar">➜</span> <span class="terminal-cmd">cat aprendendo.txt</span></div>
+            <div class="terminal-value">Laravel · Python · Front-end</div>
 
-                <h1>
-                    Transformando ideias em
-                    <span>soluções digitais.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Olá! Sou Carlos Westfal, desenvolvedor
-                    com atuação em suporte técnico e back-end.
-
-                    Gosto de transformar problemas reais em
-                    soluções eficientes, organizadas e modernas.
-                </p>
-
-                <div class="hero-actions">
-                    <a class="button primary" href="#projetos">
-                        Explorar projetos ↗
-                    </a>
-
-                    <a class="button secondary"
-                       href="https://github.com/carloswestfal"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        GitHub ↗
-                    </a>
-                </div>
-            </div>
-
-            <!-- CARD TECNOLÓGICO -->
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <span>carlos@portfolio:~</span>
-                </div>
-
-                <div class="terminal-body">
-                    <p><span class="prompt">$</span> whoami</p>
-                    <p class="terminal-output">Carlos Westfal</p>
-
-                    <p><span class="prompt">$</span> stack --list</p>
-                    <p class="terminal-output">
-                        PHP, PostgreSQL, Git, Linux
-                    </p>
-
-                    <p><span class="prompt">$</span> learning</p>
-                    <p class="terminal-output">
-                        Laravel, Python, Front-end
-                    </p>
-
-                    <p>
-                        <span class="prompt">$</span>
-                        <span class="cursor">_</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOBRE -->
-        <section id="sobre" class="section container">
-            <p class="eyebrow">01 / SOBRE MIM</p>
-            <h2>Curiosidade para aprender.<br>Foco para construir.</h2>
-
-            <p class="section-description">
-                Tenho formação técnica em Desenvolvimento
-                de Sistemas e experiência profissional
-                com suporte técnico e desenvolvimento.
-
-                Atualmente aprofundo meus conhecimentos
-                em PHP, arquitetura back-end e tecnologias web.
-            </p>
-        </section>
-
-        <!-- TECNOLOGIAS -->
-        <section id="tecnologias" class="section container">
-            <p class="eyebrow">02 / TECNOLOGIAS</p>
-            <h2>Ferramentas que fazem parte da minha jornada.</h2>
-
-            <div class="skills">
-                <span>PHP</span>
-                <span>PostgreSQL</span>
-                <span>Git & GitHub</span>
-                <span>Linux</span>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span class="learning">Laravel · estudando</span>
-                <span class="learning">Python · estudando</span>
-            </div>
-        </section>
-
-        <!-- PROJETOS -->
-        <section id="projetos" class="section container">
-            <p class="eyebrow">03 / PROJETOS</p>
-            <h2>Projetos e experimentos.</h2>
-
-            <div class="projects">
-
-                <article class="project-card">
-                    <span class="project-type">PROJETO PESSOAL</span>
-                    <h3>Portfólio Developer</h3>
-
-                    <p>
-                        Site pessoal responsivo com
-                        HTML, CSS, JavaScript e deploy
-                        automático na Cloudflare.
-                    </p>
-
-                    <a href="https://github.com/carloswestfal/portifolio-dev"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Ver repositório ↗
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <span class="project-type">ESTUDOS</span>
-                    <h3>Alura Estudos</h3>
-
-                    <p>
-                        Repositório centralizado com
-                        exercícios, desafios e projetos
-                        desenvolvidos durante meus estudos.
-                    </p>
-
-                    <span class="project-pending">
-                        🔒 Repositório privado · Estudos pessoais
-                    </span>
-                </article>
-
-                <article class="project-card">
-                    <span class="project-type">EM PLANEJAMENTO</span>
-                    <h3>Landing Pages</h3>
-
-                    <p>
-                        Desenvolvimento de experiências
-                        digitais para pequenos negócios,
-                        com foco em desempenho e usabilidade.
-                    </p>
-
-                    <span class="project-pending">
-                        Em breve
-                    </span>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- CONTATO -->
-        <section id="contato" class="section container">
-            <div class="contact">
-                <p class="eyebrow">04 / CONTATO</p>
-
-                <h2>Vamos criar algo interessante?</h2>
-
-                <p>
-                    Estou desenvolvendo novos projetos
-                    e explorando oportunidades na área
-                    de tecnologia.
-                </p>
-
-                <a class="button primary"
-                   href="https://github.com/carloswestfal"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Conhecer meu GitHub ↗
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <span>© <span id="year"></span> Carlos Westfal</span>
-            <span>Desenvolvido com HTML, CSS e JavaScript.</span>
+            <div class="terminal-line"><span class="terminal-dollar">➜</span> <span class="cursor" aria-hidden="true"></span></div>
+          </div>
+          <div class="terminal-bottom"><span class="status-light" aria-hidden="true"></span> Sempre construindo algo novo <span>01 / 03</span></div>
         </div>
-    </footer>
+        <div class="floating-tag floating-tag-a" aria-hidden="true"><span>✦</span> web development</div>
+        <div class="floating-tag floating-tag-b" aria-hidden="true"><span>◉</span> build → deploy</div>
+      </div>
+    </section>
+
+    <!-- 02 / SOBRE -->
+    <section id="sobre" class="section container" aria-labelledby="sobre-title">
+      <div class="about-layout">
+        <div class="reveal">
+          <p class="section-kicker">01 <span>/</span> SOBRE MIM</p>
+          <h2 id="sobre-title">Curiosidade para aprender. <span class="text-accent">Foco para construir.</span></h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>Sou técnico em Desenvolvimento de Sistemas e atuo profissionalmente com suporte técnico e desenvolvimento back-end. Meu dia a dia envolve investigar problemas, trabalhar com dados e evoluir soluções.</p>
+          <p>Também estudo desenvolvimento web e construo projetos próprios para praticar cada conceito na vida real — com atenção a organização, acessibilidade e desempenho.</p>
+          <div class="about-highlights">
+            <div><span>01</span><strong>Experiência prática</strong><small>Suporte, back-end e dados</small></div>
+            <div><span>02</span><strong>Estudo constante</strong><small>PHP, Laravel e fundamentos</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / TECNOLOGIAS -->
+    <section id="tecnologias" class="section section-tonal" aria-labelledby="tecnologias-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">02 <span>/</span> TECNOLOGIAS</p>
+          <h2 id="tecnologias-title">Ferramentas que fazem parte da minha jornada<span class="text-accent">.</span></h2>
+          <p>Tecnologias que utilizo, pratico ou estou aprendendo. Cada uma tem seu espaço na minha evolução.</p>
+        </div>
+        <div class="skill-layout">
+          <article class="skill-panel reveal">
+            <div class="skill-panel-heading"><span class="skill-symbol">{ }</span><div><h3>Desenvolvimento & dados</h3><p>Prática profissional e projetos</p></div></div>
+            <div class="tag-group"><span>PHP</span><span>PostgreSQL</span><span>SQL</span><span>Git & GitHub</span><span>Linux</span></div>
+          </article>
+          <article class="skill-panel reveal">
+            <div class="skill-panel-heading"><span class="skill-symbol">&lt;/&gt;</span><div><h3>Web & aprendizado</h3><p>Construindo e aprofundando</p></div></div>
+            <div class="tag-group"><span>HTML</span><span>CSS</span><span>JavaScript</span><span class="tag-learning">Laravel · estudando</span><span class="tag-learning">Python · fundamentos</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / PROJETOS -->
+    <section id="projetos" class="section container" aria-labelledby="projetos-title">
+      <div class="section-heading reveal">
+        <p class="section-kicker">03 <span>/</span> PROJETOS</p>
+        <h2 id="projetos-title">Projetos, experimentos e ideias em construção<span class="text-accent">.</span></h2>
+        <p>Alguns dos projetos que representam meu aprendizado e minha forma de trabalhar.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-art art-portfolio" aria-hidden="true">
+            <div class="mini-browser"><div class="mini-browser-top"><span></span><span></span><span></span><div class="mini-address">carloswestfal.dev</div></div><div class="mini-browser-main"><div class="mini-kicker"></div><div class="mini-headline">Ideias em <em>código.</em></div><div class="mini-lines"><i></i><i></i></div><div class="mini-button"></div></div></div>
+            <div class="art-orbit"></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-category">PROJETO PESSOAL</span><span class="project-status"><i></i> No ar</span></div>
+            <h3>Meu portfólio</h3>
+            <p>Um espaço para apresentar minha trajetória e meus projetos, com tema claro/escuro, responsividade e deploy automático.</p>
+            <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Cloudflare</span></div>
+            <div class="project-links"><a href="https://carloswestfal.dev/" target="_blank" rel="noopener noreferrer">Ver projeto ↗</a><a href="https://github.com/carloswestfal/portifolio-dev" target="_blank" rel="noopener noreferrer">Código ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-studies" aria-hidden="true">
+            <div class="study-window"><div class="study-title"><span>⌁</span> /alura-estudos</div><div class="study-row"><b>01</b><span>fundamentos/</span><i></i></div><div class="study-row"><b>02</b><span>linguagens/</span><i></i></div><div class="study-row"><b>03</b><span>ferramentas/</span><i></i></div><div class="study-row"><b>04</b><span>boas-praticas/</span><i></i></div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-category">ESTUDOS</span><span class="project-status project-status-muted">Privado</span></div>
+            <h3>Alura Estudos</h3>
+            <p>Repositório pessoal que reúne exercícios e projetos de cursos, organizados por área de conhecimento.</p>
+            <div class="project-stack"><span>Git</span><span>Lógica</span><span>Aprendizado</span></div>
+            <span class="project-quiet" aria-label="Repositório privado, sem link público">🔒 Repositório privado</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-landing" aria-hidden="true"><div class="landing-wireframe"><div class="landing-nav"><i></i><span></span><span></span><span></span></div><div class="landing-content"><div><b>Design que<br><em>conecta.</em></b><i></i><i></i><span></span></div><div class="landing-picture"><div class="landing-circle"></div></div></div></div></div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-category">PRÓXIMOS PROJETOS</span><span class="project-status project-status-muted">Planejamento</span></div>
+            <h3>Landing pages</h3>
+            <p>Páginas para pequenos negócios, pensadas para apresentar serviços de forma clara, rápida e profissional.</p>
+            <div class="project-stack"><span>HTML</span><span>CSS</span><span>UX</span><span>SEO</span></div>
+            <span class="project-quiet">Novidades em breve</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05 / CONTATO -->
+    <section id="contato" class="section container contact-section" aria-labelledby="contato-title">
+      <div class="contact-card reveal">
+        <div class="contact-decoration" aria-hidden="true"></div>
+        <p class="section-kicker">04 <span>/</span> CONTATO</p>
+        <h2 id="contato-title">Boas ideias merecem <span>ganhar vida.</span></h2>
+        <p>Quer conhecer melhor meu trabalho? Explore meus repositórios e acompanhe os projetos que estou construindo.</p>
+        <a class="button button-primary" href="https://github.com/carloswestfal" target="_blank" rel="noopener noreferrer">Explorar meu GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><a href="#inicio" class="footer-brand">cw<span>.</span></a><p>© <span id="year">2026</span> Carlos Westfal · Feito com código e curiosidade.</p><a href="#topo" class="back-to-top">Voltar ao topo ↑</a></div>
+  </footer>
 </body>
 </html>
